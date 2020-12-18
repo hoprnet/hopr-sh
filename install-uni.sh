@@ -26,7 +26,6 @@ do
                    sudo apt -y  install gcc g++ make
                    sudo apt -y install nodejs
                    sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
-                   tmux
                    DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> hopr[$vrelease].log.txt
                             ;;
                 n)

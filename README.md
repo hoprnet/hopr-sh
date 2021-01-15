@@ -18,8 +18,12 @@ when running this command the first time, it will create folder `db` in which
 it will store your private data.
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> titlis.log.txt
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> logs.txt
 ```
+
+### Accessing HOPRd on a local machine
+
+Visit http://localhost:3000.
 
 ### Accessing HOPRd on a VPS
 
@@ -28,12 +32,14 @@ $ ssh -L 3000:0.0.0.0:3000 root@`<VPS ip address>`
 # you'll then be prompted to enter your password
 ```
 
+Then visit http://localhost:3000 on your browser.
+
 ### Save logs from a VPS
 
 in the _local_ computer:
 
 ```bash
-$ scp `<VPS username>`@`<VPS ip address>`:/hoprd/log.txt ~/
+$ scp `<VPS username>`@`<VPS ip address>`:~/logs.txt ~/
 ```
 
 ### Tested on

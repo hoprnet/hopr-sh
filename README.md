@@ -5,17 +5,20 @@
 Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
 ```bash
-$ wget https://github.com/hoprnet/hopr-sh/blob/master/setup-hoprd.sh
+$ sudo apt install -y wget
+$ wget https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd.sh
 $ chmod +x setup-hoprd.sh
 $ ./setup-hoprd.sh
 ```
 
 ## Running HOPRd
 
-With this command, we will run hoprd and store logs.
+With this command, we will run hoprd and store logs,
+when running this command the first time, it will create folder `db` in which
+it will store your private data.
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --data /hoprd --rest --admin 2> titlis[$(hoprd --version)].log.txt
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> titlis.log.txt
 ```
 
 ### Accessing HOPRd on a VPS
@@ -37,4 +40,5 @@ $ scp `<VPS username>`@`<VPS ip address>`:/hoprd/log.txt ~/
 
 | OS     | version | works |
 | ------ | ------- | ----- |
-| ubuntu | 4.15.0  | ✔️    |
+| ubuntu | 16.04.1 | ✔️    |
+| debian | 4.19    | ✔️    |

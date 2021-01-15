@@ -32,3 +32,9 @@ in the _local_ computer:
 ```bash
 $ scp `<VPS username>`@`<VPS ip address>`:/hoprd/log.txt ~/
 ```
+
+### Tested on
+
+| OS     | version | works |
+| ------ | ------- | ----- |
+| ubuntu | 4.15.0  | ✔️    |

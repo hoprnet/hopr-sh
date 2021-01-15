@@ -28,6 +28,7 @@ do
                 sudo apt -y install gcc g++ make
                 sudo apt -y install nodejs
                 sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                hoprd --help
                 exit ;;
             n)
                 echo "Goodbye!"

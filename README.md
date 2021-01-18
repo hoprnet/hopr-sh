@@ -31,7 +31,7 @@ when running this command the first time, it will create folder `db` in which
 it will store your private data.
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> logs.txt
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> ~/hoprd-logs.txt
 ```
 
 ### Accessing HOPRd on a local machine
@@ -52,7 +52,7 @@ Then visit http://localhost:3000 on your browser.
 in the _local_ computer:
 
 ```bash
-$ scp `<VPS username>`@`<VPS ip address>`:~/logs.txt ~/
+$ scp `<VPS username>`@`<VPS ip address>`:~/hoprd-logs.txt ~/
 ```
 
 ### Tested on
@@ -61,3 +61,4 @@ $ scp `<VPS username>`@`<VPS ip address>`:~/logs.txt ~/
 | ------ | ------- | ----- |
 | ubuntu | 16.04.1 | ✔️    |
 | debian | 4.19    | ✔️    |
+| macOS  | 10.15.7 | ✔️    |

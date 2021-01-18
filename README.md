@@ -31,7 +31,7 @@ when running this command the first time, it will create folder `db` in which
 it will store your private data.
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> ~/hoprd-logs.txt
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee ~/hoprd-logs.txt
 ```
 
 ### Accessing HOPRd on a local machine

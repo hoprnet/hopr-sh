@@ -1,26 +1,64 @@
 # HOPR SH
 
-## install-uni instructions:
+## Setup and install HOPRd
 
-log in to vps
+### Ubuntu or Debian
 
-* wget https://github.com/hoprnet/hopr-sh/blob/master/install-uni.sh
-* chmod +x install-uni.sh
-* ./install-uni.sh
+Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
-### to run chat in local browser
+```bash
+$ sudo apt install -y curl
+$ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd.sh --output setup-hoprd.sh
+$ chmod +x setup-hoprd.sh
+$ ./setup-hoprd.sh
+```
 
-* ssh -L 3000:0.0.0.0:3000 root@`<ip address of VPS>`
-* you'll then be prompted to enter your password
+### macOS
 
-### if users need to save logs primitively
+Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
-in the *local* computer:
+```bash
+$ brew install curl
+$ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd-macos.sh --output setup-hoprd.sh
+$ chmod +x setup-hoprd.sh
+$ ./setup-hoprd.sh
+```
 
-* scp `<username>`@`<ip address>`:/hopr-chat/log.txt ~/Desktop
+## Running HOPRd
 
-`<username>` is the vps username, probably `root`
+With this command, we will run hoprd and store logs,
+when running this command the first time, it will create folder `db` in which
+it will store your private data.
 
-`<ip address>` is the vps ip address
+```bash
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2> ~/hoprd-logs.txt
+```
 
-they will be prompted to enter the vps password and then download will begin
+### Accessing HOPRd on a local machine
+
+Visit http://localhost:3000.
+
+### Accessing HOPRd on a VPS
+
+```bash
+$ ssh -L 3000:0.0.0.0:3000 root@`<VPS ip address>`
+# you'll then be prompted to enter your password
+```
+
+Then visit http://localhost:3000 on your browser.
+
+### Save logs from a VPS
+
+in the _local_ computer:
+
+```bash
+$ scp `<VPS username>`@`<VPS ip address>`:~/hoprd-logs.txt ~/
+```
+
+### Tested on
+
+| OS     | version | works |
+| ------ | ------- | ----- |
+| ubuntu | 16.04.1 | ✔️    |
+| debian | 4.19    | ✔️    |
+| macOS  | 10.15.7 | ✔️    |

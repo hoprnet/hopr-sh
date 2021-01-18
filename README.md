@@ -2,11 +2,24 @@
 
 ## Setup and install HOPRd
 
+### Ubuntu or Debian
+
 Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
 ```bash
-$ sudo apt install -y wget
-$ wget https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd.sh
+$ sudo apt install -y curl
+$ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd.sh --output setup-hoprd.sh
+$ chmod +x setup-hoprd.sh
+$ ./setup-hoprd.sh
+```
+
+### macOS
+
+Type following commands into your terminal, if you are using a VPS, log in into your VPS.
+
+```bash
+$ brew install curl
+$ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd-macos.sh --output setup-hoprd.sh
 $ chmod +x setup-hoprd.sh
 $ ./setup-hoprd.sh
 ```

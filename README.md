@@ -32,15 +32,15 @@ With these commands (choose according to your setup), we will run hoprd and stor
 ```bash
 DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
 ```
-#### Localhost, no logs
-
-```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
-```
 #### Exposed VPS, no logs
 
 ```bash
 DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+```
+#### Localhost, no logs
+
+```bash
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
 ```
 
 ### Accessing HOPRd on a local machine

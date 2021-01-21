@@ -24,6 +24,18 @@ $ chmod +x setup-hoprd.sh
 $ ./setup-hoprd.sh
 ```
 
+### Docker
+
+Find the version you want to run in our [Docker Registry](http://gcr.io/hoprassociation/hoprd) and use it as a base image. Latest version is tagged as `latest`.
+
+```bash
+$ docker run -v $(pwd):/app/db \
+  -e NODE_OPTIONS=--max-old-space-size=4096 -e DEBUG=hopr\* \
+  -p 9091:9091 -p 3000:3000 -p 3001:3001 \
+  -it gcr.io/hoprassociation/hoprd:latest \
+  --password switzerland --init --rest --restHost 0.0.0.0 --admin --adminHost 0.0.0.0
+```
+
 ## Running HOPRd
 
 With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.

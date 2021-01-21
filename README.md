@@ -26,12 +26,21 @@ $ ./setup-hoprd.sh
 
 ## Running HOPRd
 
-With this command, we will run hoprd and store logs,
-when running this command the first time, it will create folder `db` in which
-it will store your private data.
+With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.
+
+#### Piped logs
+```bash
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
+```
+#### Localhost, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee ~/hoprd-logs.txt
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+```
+#### Exposed VPS, no logs
+
+```bash
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 
 ### Accessing HOPRd on a local machine

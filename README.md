@@ -24,6 +24,17 @@ $ chmod +x setup-hoprd.sh
 $ ./setup-hoprd.sh
 ```
 
+### CentOS
+
+Type following commands into your terminal, if you are using a VPS, log in into your VPS.
+
+```bash
+$ sudo yum install -y curl
+$ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd.sh --output setup-hoprd.sh
+$ chmod +x setup-hoprd.sh
+$ ./setup-hoprd.sh
+```
+
 ## Running HOPRd
 
 With this command, we will run hoprd and store logs,
@@ -62,3 +73,4 @@ $ scp `<VPS username>`@`<VPS ip address>`:~/hoprd-logs.txt ~/
 | ubuntu | 16.04.1 | ✔️    |
 | debian | 4.19    | ✔️    |
 | macOS  | 10.15.7 | ✔️    |
+| centOS | 8.3.2011| ✔️    |

@@ -40,11 +40,11 @@ $ docker run -v $(pwd):/app/db \
 
 With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.
 
-#### For Titlis Testnet v2
+#### For Pilatus Testnet
 ```bash
 DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --provider="wss://ropsten.infura.io/ws/v3/21ceb5486c454b2cb8e6ec54d1432de1"
 ```
-#### For Titlis Testnet v2 -- Exposed VPS (no logs)
+#### For Pilatus Testnet -- Exposed VPS (no logs)
 ```bash
 DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0 --provider="wss://ropsten.infura.io/ws/v3/21ceb5486c454b2cb8e6ec54d1432de1"
 ```

@@ -24,7 +24,7 @@ do
             y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
                 read vrelease
                 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-                curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+                curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
                 sudo apt -y install gcc g++ make
                 sudo apt -y install nodejs
                 sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease

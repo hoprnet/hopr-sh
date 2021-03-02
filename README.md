@@ -42,11 +42,11 @@ With these commands (choose according to your setup), we will run hoprd and stor
 
 #### For Wildhorn Testnet
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --provider="wss://ropsten.infura.io/ws/v3/21ceb5486c454b2cb8e6ec54d1432de1"
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
 ```
 #### For Wildhorn Testnet -- Exposed VPS (no logs)
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0 --provider="wss://ropsten.infura.io/ws/v3/21ceb5486c454b2cb8e6ec54d1432de1"
+DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 #### Piped logs
 ```bash

@@ -17,6 +17,14 @@ $ ./setup-hoprd.sh
 
 Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
+In case you have not installed it already, install the XCode CLI Utils via:
+
+```bash
+$ sudo xcode-select --install
+```
+
+Also check whether you have installed [Homebrew](https://brew.sh/) - the OSX package manager - and install it if is not installed yet.
+
 ```bash
 $ brew install curl
 $ curl https://raw.githubusercontent.com/hoprnet/hopr-sh/master/setup-hoprd-macos.sh --output setup-hoprd.sh

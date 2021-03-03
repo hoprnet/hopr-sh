@@ -52,7 +52,7 @@ With these commands (choose according to your setup), we will run hoprd and stor
 ```bash
 DEBUG=hopr* hoprd --init --rest --admin
 ```
-#### For Jungfrau -- Exposed VPS (no logs)
+#### For Jungfrau release -- Exposed VPS (no logs)
 ```bash
 DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```

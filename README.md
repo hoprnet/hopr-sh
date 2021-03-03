@@ -23,7 +23,7 @@ In case you have not installed it already, install the XCode CLI Utils via:
 $ sudo xcode-select --install
 ```
 
-Also check whether you have installed [Homebrew](https://brew.sh/) - the OSX package manager - and install it if is not installed yet.
+Also check whether you have installed [Homebrew](https://brew.sh/) - the OSX package manager - and install it if it is not installed yet.
 
 ```bash
 $ brew install curl

@@ -17,7 +17,7 @@ $ ./setup-hoprd.sh
 
 Type following commands into your terminal, if you are using a VPS, log in into your VPS.
 
-In case you have not installed it already, install the XCode CLI Utils via:
+In case you have not installed it already, install the XCode CLI Tools via:
 
 ```bash
 $ sudo xcode-select --install

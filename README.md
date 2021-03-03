@@ -99,5 +99,5 @@ $ scp `<VPS username>`@`<VPS ip address>`:~/hoprd-logs.txt ~/
 | ubuntu | 16.04.1 | ✔️    |
 | debian | 10, with Linux 5.10    | ✔️    |
 | macOS (x86)  | 10.15.7 | ✔️    |
-| macOS (ARM)  | 10.15.7 | ✔️    |
+| macOS (ARM)  | 11.2.2 | ✔️    |
 

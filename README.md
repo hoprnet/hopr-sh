@@ -50,25 +50,25 @@ With these commands (choose according to your setup), we will run hoprd and stor
 
 #### For Wildhorn Testnet
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --rest --admin
 ```
 #### For Wildhorn Testnet -- Exposed VPS (no logs)
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 #### Piped logs
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
+DEBUG=hopr* hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
 ```
 #### Exposed VPS, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 #### Localhost, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --rest --admin
 ```
 
 ### Accessing HOPRd on a local machine

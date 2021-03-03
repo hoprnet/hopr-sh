@@ -48,11 +48,11 @@ $ docker run -v $(pwd):/app/db \
 
 With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.
 
-#### For Wildhorn Testnet
+#### For Jungfrau release
 ```bash
 DEBUG=hopr* hoprd --init --rest --admin
 ```
-#### For Wildhorn Testnet -- Exposed VPS (no logs)
+#### For Jungfrau -- Exposed VPS (no logs)
 ```bash
 DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```

@@ -35,7 +35,7 @@ do
                     else
                         echo "WARN: unable to configure nvm, installing with brew"
                         brew install node@14
-                        sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                        npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
                     fi
                     hoprd --help
                 # For Linux

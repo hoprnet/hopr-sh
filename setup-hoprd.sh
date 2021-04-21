@@ -25,7 +25,16 @@ do
                 # For macOS
                 if [ "$(uname -s)" == "Darwin" ]; then
                     read vrelease
-                    brew install node@14
+                    if [ -f ~/.nvm/nvm.sh ]; then
+                        echo 'sourcing nvm from ~/.nvm'
+                        . ~/.nvm/nvm.sh
+                    fi
+                    if command -v nvm ; then
+                        nvm i v14.16.1
+                    else
+                        echo "WARN: unable to configure nvm, installing with brew"
+                        brew install node@14
+                    fi
                     npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
                     hoprd --help
                 # For Linux
@@ -34,8 +43,18 @@ do
                     sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
                     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
                     sudo apt -y install gcc g++ make
-                    sudo apt -y install nodejs
-                    sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                    if [ -f ~/.nvm/nvm.sh ]; then
+                        echo 'sourcing nvm from ~/.nvm'
+                        . ~/.nvm/nvm.sh
+                    fi
+                    if command -v nvm ; then
+                        nvm i v14.16.1
+                        npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                    else
+                        echo "WARN: unable to configure nvm, installing with apt"
+                        sudo apt -y install nodejs
+                        sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                    fi
                     hoprd --help
                 fi
                 exit ;;

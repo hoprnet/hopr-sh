@@ -31,12 +31,11 @@ do
                     fi
                     if command -v nvm ; then
                         nvm i v14.16.1
-                        npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
                     else
                         echo "WARN: unable to configure nvm, installing with brew"
                         brew install node@14
-                        npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
                     fi
+                    npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
                     hoprd --help
                 # For Linux
                 else

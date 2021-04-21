@@ -22,13 +22,22 @@ do
         read -p "Would you like to run this script? [y/n]:" response
         case $response in
             y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
-                read vrelease
-                sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-                curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-                sudo apt -y install gcc g++ make
-                sudo apt -y install nodejs
-                sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
-                hoprd --help
+                # For macOS
+                if [ "$(uname -s)" == "Darwin" ]; then
+                    read vrelease
+                    brew install node@14
+                    npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                    hoprd --help
+                # For Linux
+                else
+                    read vrelease
+                    sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+                    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+                    sudo apt -y install gcc g++ make
+                    sudo apt -y install nodejs
+                    sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                    hoprd --help
+                fi
                 exit ;;
             n)
                 echo "Goodbye!"

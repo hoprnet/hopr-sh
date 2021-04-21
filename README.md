@@ -48,27 +48,27 @@ $ docker run -v $(pwd):/app/db \
 
 With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.
 
-#### For Wildhorn Testnet
+#### For Jungfrau release
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --rest --admin
 ```
-#### For Wildhorn Testnet -- Exposed VPS (no logs)
+#### For Jungfrau release -- Exposed VPS (no logs)
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 #### Piped logs
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
+DEBUG=hopr* hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
 ```
 #### Exposed VPS, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --rest --admin --adminHost 0.0.0.0
 ```
 #### Localhost, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --rest --admin
 ```
 
 ### Accessing HOPRd on a local machine
@@ -97,7 +97,7 @@ $ scp `<VPS username>`@`<VPS ip address>`:~/hoprd-logs.txt ~/
 | OS     | version | works |
 | ------ | ------- | ----- |
 | ubuntu | 16.04.1 | ✔️    |
-| debian | 4.19    | ✔️    |
+| debian | 10, with Linux 5.10    | ✔️    |
 | macOS (x86)  | 10.15.7 | ✔️    |
-| macOS (ARM)  | 10.15.7 | ✔️    |
+| macOS (ARM)  | 11.2.2 | ✔️    |
 

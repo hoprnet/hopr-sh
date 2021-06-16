@@ -48,27 +48,27 @@ $ docker run -v $(pwd):/app/db \
 
 With these commands (choose according to your setup), we will run hoprd and store logs. When running this command the first time, it will create folder `db` in which it will store your private data.
 
-#### For Wildhorn Testnet
+#### For Testnet
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --admin
 ```
-#### For Wildhorn Testnet -- Exposed VPS (no logs)
+#### For Testnet -- Exposed VPS (no logs)
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --admin --adminHost 0.0.0.0 --announce
 ```
 #### Piped logs
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin 2>&1 | tee hoprd-logs.txt
+DEBUG=hopr* hoprd --init --admin 2>&1 | tee hoprd-logs.txt
 ```
 #### Exposed VPS, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin --adminHost 0.0.0.0
+DEBUG=hopr* hoprd --init --admin --adminHost 0.0.0.0 --announce
 ```
 #### Localhost, no logs
 
 ```bash
-DEBUG=hopr*,libp2p:mplex:stream hoprd --init --rest --admin
+DEBUG=hopr* hoprd --init --admin
 ```
 
 ### Accessing HOPRd on a local machine

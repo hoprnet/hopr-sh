@@ -30,13 +30,17 @@ do
                         . ~/.nvm/nvm.sh
                     fi
                     if command -v nvm ; then
-                        nvm i v14.16.1
+                        nvm i v16
                     else
                         echo "WARN: unable to configure nvm, installing with brew"
-                        brew install node@14
+                        brew install node@16
                     fi
-                    npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
-                    hoprd --help
+                    mkdir hopr-$vrelease && cd hopr-$vrelease
+                    npm install @hoprnet/hoprd@$vrelease
+                    cd hopr-$vrelease
+                    NODE_VERSION=$(npx hoprd --version)
+                    echo "hoprd version: ${NODE_VERSION}"
+                    bash
                 # For Linux
                 else
                     read vrelease
@@ -48,14 +52,19 @@ do
                         . ~/.nvm/nvm.sh
                     fi
                     if command -v nvm ; then
-                        nvm i v14.16.1
-                        npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                        nvm i v16
+                        mkdir hopr-$vrelease && cd hopr-$vrelease
+                        npm install @hoprnet/hoprd@$vrelease
                     else
                         echo "WARN: unable to configure nvm, installing with apt"
                         sudo apt -y install nodejs
-                        sudo npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
+                        mkdir hopr-$vrelease && cd hopr-$vrelease
+                        sudo npm install @hoprnet/hoprd@$vrelease
                     fi
-                    hoprd --help
+                    cd hopr-$vrelease
+                    NODE_VERSION=$(npx hoprd --version)
+                    echo "hoprd version: ${NODE_VERSION}"
+                    bash
                 fi
                 exit ;;
             n)

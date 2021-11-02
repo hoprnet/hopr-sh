@@ -37,15 +37,13 @@ do
                     fi
                     mkdir hopr-$vrelease && cd hopr-$vrelease
                     npm install @hoprnet/hoprd@$vrelease
-                    cd hopr-$vrelease
                     NODE_VERSION=$(npx hoprd --version)
                     echo "hoprd version: ${NODE_VERSION}"
-                    bash
                 # For Linux
                 else
                     read vrelease
                     sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-                    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+                    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
                     sudo apt -y install gcc g++ make
                     if [ -f ~/.nvm/nvm.sh ]; then
                         echo 'sourcing nvm from ~/.nvm'
@@ -61,10 +59,8 @@ do
                         mkdir hopr-$vrelease && cd hopr-$vrelease
                         sudo npm install @hoprnet/hoprd@$vrelease
                     fi
-                    cd hopr-$vrelease
                     NODE_VERSION=$(npx hoprd --version)
                     echo "hoprd version: ${NODE_VERSION}"
-                    bash
                 fi
                 exit ;;
             n)

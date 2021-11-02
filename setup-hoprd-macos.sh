@@ -23,9 +23,11 @@ do
         case $response in
             y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
                 read vrelease
-                brew install node@14
-                npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
-                hoprd --help
+                brew install node@16
+                mkdir hopr-$vrelease && cd hopr-$vrelease
+                npm install @hoprnet/hoprd@$vrelease
+                NODE_VERSION=$(npx hoprd --version)
+                echo "hoprd version: ${NODE_VERSION}"
                 exit ;;
             n)
                 echo "Goodbye!"

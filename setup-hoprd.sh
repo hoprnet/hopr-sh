@@ -21,7 +21,7 @@ do
 
         read -p "Would you like to run this script? [y/n]:" response
         case $response in
-            y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
+            y) echo What release are you installing? Example: wildhorn-v2 \(The latest community release version you will find on the docs page\)
                 # For macOS
                 if [ "$(uname -s)" == "Darwin" ]; then
                     read vrelease

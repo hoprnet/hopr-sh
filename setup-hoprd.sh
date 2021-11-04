@@ -21,7 +21,7 @@ do
 
         read -p "Would you like to run this script? [y/n]:" response
         case $response in
-            y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
+            y) echo What release are you installing? Example: wildhorn-v2 \(The latest community release version you will find on the docs page\)
                 # For macOS
                 if [ "$(uname -s)" == "Darwin" ]; then
                     read vrelease
@@ -37,15 +37,13 @@ do
                     fi
                     mkdir hopr-$vrelease && cd hopr-$vrelease
                     npm install @hoprnet/hoprd@$vrelease
-                    cd hopr-$vrelease
                     NODE_VERSION=$(npx hoprd --version)
                     echo "hoprd version: ${NODE_VERSION}"
-                    bash
                 # For Linux
                 else
                     read vrelease
                     sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-                    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+                    curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
                     sudo apt -y install gcc g++ make
                     if [ -f ~/.nvm/nvm.sh ]; then
                         echo 'sourcing nvm from ~/.nvm'
@@ -61,10 +59,8 @@ do
                         mkdir hopr-$vrelease && cd hopr-$vrelease
                         sudo npm install @hoprnet/hoprd@$vrelease
                     fi
-                    cd hopr-$vrelease
                     NODE_VERSION=$(npx hoprd --version)
                     echo "hoprd version: ${NODE_VERSION}"
-                    bash
                 fi
                 exit ;;
             n)

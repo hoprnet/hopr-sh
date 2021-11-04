@@ -21,11 +21,13 @@ do
 
         read -p "Would you like to run this script? [y/n]:" response
         case $response in
-            y) echo What release are you installing? Format: X.XX.X \(https://github.com/hoprnet/hoprnet/releases\)
+            y) echo What release are you installing? Example: wildhorn-v2 \(The latest community release version you will find on the docs page\)
                 read vrelease
-                brew install node@14
-                npm install --unsafe-perm=true -g @hoprnet/hoprd@$vrelease
-                hoprd --help
+                brew install node@16
+                mkdir hopr-$vrelease && cd hopr-$vrelease
+                npm install @hoprnet/hoprd@$vrelease
+                NODE_VERSION=$(npx hoprd --version)
+                echo "hoprd version: ${NODE_VERSION}"
                 exit ;;
             n)
                 echo "Goodbye!"

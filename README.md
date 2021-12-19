@@ -41,7 +41,7 @@ Check out our [docs](https://docs.hoprnet.org/en/latest/index.html) on how to ru
 | OS     | version | works |
 | ------ | ------- | ----- |
 | ubuntu | 16.04.1 | ✔️    |
-| debian | 4.19    | ✔️    |
+| debian | 10 (buster) | ✔️    |
 | macOS (x86)  | 10.15.7 | ✔️    |
 | macOS (ARM)  | 10.15.7 | ✔️    |
 
